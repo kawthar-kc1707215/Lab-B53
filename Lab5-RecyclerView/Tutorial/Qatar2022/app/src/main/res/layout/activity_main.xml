@@ -30,6 +30,7 @@
             android:layout_marginLeft="16dp"
             android:drawableLeft="@drawable/ic_navigate_previous"
             android:text="Prev"
+            android:onClick="onClick"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="335dp" />
@@ -39,6 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="41dp"
             android:text="Next"
+            android:onClick="onClick"
             android:textSize="12sp"
             tools:layout_editor_absoluteX="288dp"
             tools:layout_editor_absoluteY="484dp"
