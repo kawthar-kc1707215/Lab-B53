@@ -9,16 +9,25 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import cmps312.lab.qatar2022.model.Stadium
 import com.example.qatar2022.R
+import kotlinx.android.synthetic.main.list_item_stadium.view.*
 
 class StadiumAdapter(val stadiums: List<Stadium>, private val context: Context)
     : RecyclerView.Adapter<StadiumAdapter.StadiumViewHolder>() {
 
     //step 1 create the view holder
-    class StadiumViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val nameTv = itemView.findViewById<TextView>(R.id.nameTv)
-        val cityTv = itemView.findViewById<TextView>(R.id.cityTv)
-        val statusTv = itemView.findViewById<TextView>(R.id.statusTv)
-        val stadiumIv = itemView.findViewById<ImageView>(R.id.stadiumIv)
+    class StadiumViewHolder(private val itemView: View) : RecyclerView.ViewHolder(itemView){
+        fun bind(stadium: Stadium){
+            itemView.apply {
+                nameTv.text = stadium.name
+                cityTv.text = stadium.name
+                statusTv.text = stadium.name
+
+                val imageName = stadium.imageName
+                val imageId = context.resources.getIdentifier(imageName, "drawable" , context.packageName)
+
+                stadiumIv.setImageResource(imageId)
+            }
+        }
     }
 
     //step 3
@@ -29,13 +38,7 @@ class StadiumAdapter(val stadiums: List<Stadium>, private val context: Context)
     }
     //step 4 injecting the data
     override fun onBindViewHolder(holder: StadiumViewHolder, position: Int) {
-        holder.nameTv.text = stadiums[position].name
-        holder.cityTv.text = stadiums[position].name
-        holder.statusTv.text = stadiums[position].name
-
-        val imageName = stadiums[position].imageName
-        val imageId = context.resources.getIdentifier(imageName, "drawable" , context.packageName)
-        holder.stadiumIv.setImageResource(imageId)
+        holder.bind(stadiums[position])
     }
     //step 2
     override fun getItemCount() = stadiums.size
