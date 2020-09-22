@@ -18,7 +18,11 @@
         android:id="@+id/confirmationFragment"
         android:name="cmps312.lab.bankingapp.ConfirmationFragment"
         android:label="fragment_confirmation2"
-        tools:layout="@layout/fragment_confirmation2" />
+        tools:layout="@layout/fragment_confirmation2" >
+        <action
+            android:id="@+id/action_confirmationFragment_to_transactionListFragment"
+            app:destination="@id/transactionListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/specifyReceiverInfoFragment"
         android:name="cmps312.lab.bankingapp.SpecifyReceiverInfoFragment"

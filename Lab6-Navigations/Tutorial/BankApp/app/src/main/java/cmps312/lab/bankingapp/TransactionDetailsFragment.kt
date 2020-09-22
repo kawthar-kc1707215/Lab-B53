@@ -34,7 +34,7 @@ class TransactionDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_transaction_details2, container, false)
+        return inflater.inflate(R.layout.fragment_transaction_details, container, false)
     }
 
     companion object {

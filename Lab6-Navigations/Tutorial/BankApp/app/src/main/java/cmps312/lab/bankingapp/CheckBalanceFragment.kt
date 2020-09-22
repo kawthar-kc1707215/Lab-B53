@@ -34,7 +34,7 @@ class CheckBalanceFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_check_balance2, container, false)
+        return inflater.inflate(R.layout.fragment_check_balance, container, false)
     }
 
     companion object {
