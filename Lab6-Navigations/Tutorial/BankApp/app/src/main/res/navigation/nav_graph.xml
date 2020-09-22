@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/checkBalanceFragment"
-        android:name="cmps312.lab.bankingapp.CheckBalanceFragment"
+        android:name="cmps312.lab.bankingapp.ui.CheckBalanceFragment"
         android:label="fragment_check_balance2"
         tools:layout="@layout/fragment_check_balance2" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/confirmationFragment"
-        android:name="cmps312.lab.bankingapp.ConfirmationFragment"
+        android:name="cmps312.lab.bankingapp.ui.ConfirmationFragment"
         android:label="fragment_confirmation2"
         tools:layout="@layout/fragment_confirmation2" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/specifyReceiverInfoFragment"
-        android:name="cmps312.lab.bankingapp.SpecifyReceiverInfoFragment"
+        android:name="cmps312.lab.bankingapp.ui.SpecifyReceiverInfoFragment"
         android:label="fragment_specify_receiver_info"
         tools:layout="@layout/fragment_specify_receiver_info" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/specifySenderInfoFragment"
-        android:name="cmps312.lab.bankingapp.SpecifySenderInfoFragment"
+        android:name="cmps312.lab.bankingapp.ui.SpecifySenderInfoFragment"
         android:label="fragment_specify_sender_info2"
         tools:layout="@layout/fragment_specify_sender_info2" >
         <action
@@ -43,12 +43,12 @@
     </fragment>
     <fragment
         android:id="@+id/transactionDetailsFragment"
-        android:name="cmps312.lab.bankingapp.TransactionDetailsFragment"
+        android:name="cmps312.lab.bankingapp.ui.TransactionDetailsFragment"
         android:label="fragment_transaction_details2"
         tools:layout="@layout/fragment_transaction_details2" />
     <fragment
         android:id="@+id/transactionListFragment"
-        android:name="cmps312.lab.bankingapp.TransactionListFragment"
+        android:name="cmps312.lab.bankingapp.ui.TransactionListFragment"
         android:label="fragment_transaction_list2"
         tools:layout="@layout/fragment_transaction_list2" >
         <action

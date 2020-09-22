@@ -1,10 +1,11 @@
-package cmps312.lab.bankingapp
+package cmps312.lab.bankingapp.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import cmps312.lab.bankingapp.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -13,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ConfirmationFragment.newInstance] factory method to
+ * Use the [CheckBalanceFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ConfirmationFragment : Fragment() {
+class CheckBalanceFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,7 +35,7 @@ class ConfirmationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_confirmation, container, false)
+        return inflater.inflate(R.layout.fragment_check_balance, container, false)
     }
 
     companion object {
@@ -44,12 +45,12 @@ class ConfirmationFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment ConfirmationFragment.
+         * @return A new instance of fragment CheckBalanceFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ConfirmationFragment().apply {
+            CheckBalanceFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
