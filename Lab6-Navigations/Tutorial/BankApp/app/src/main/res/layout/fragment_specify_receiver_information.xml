@@ -7,7 +7,7 @@
     tools:context=".ui.SpecifyReceiverInfoFragment">
 
     <EditText
-        android:id="@+id/senderNameEdt"
+        android:id="@+id/recieverNameEdt"
         android:layout_width="254dp"
         android:layout_height="46dp"
         android:layout_marginTop="190dp"
@@ -19,15 +19,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/senderAccountNoEdt"
+        android:id="@+id/recieverAccountNoEdt"
         android:layout_width="251dp"
         android:layout_height="48dp"
         android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="Receiver Account No"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/senderNameEdt"
-        app:layout_constraintTop_toBottomOf="@+id/senderNameEdt" />
+        app:layout_constraintStart_toStartOf="@+id/recieverNameEdt"
+        app:layout_constraintTop_toBottomOf="@+id/recieverNameEdt" />
 
     <Button
         android:id="@+id/nextBtn"
@@ -36,8 +36,8 @@
         android:layout_marginTop="47dp"
         android:text="Next"
         app:layout_constraintEnd_toStartOf="@+id/cancelBtn"
-        app:layout_constraintStart_toStartOf="@+id/senderAccountNoEdt"
-        app:layout_constraintTop_toBottomOf="@+id/senderAccountNoEdt" />
+        app:layout_constraintStart_toStartOf="@+id/recieverAccountNoEdt"
+        app:layout_constraintTop_toBottomOf="@+id/recieverAccountNoEdt" />
 
     <Button
         android:id="@+id/cancelBtn"
@@ -47,7 +47,7 @@
         android:layout_marginLeft="38dp"
         android:text="Cancel"
         app:layout_constraintBaseline_toBaselineOf="@+id/nextBtn"
-        app:layout_constraintEnd_toEndOf="@+id/senderAccountNoEdt"
+        app:layout_constraintEnd_toEndOf="@+id/recieverAccountNoEdt"
         app:layout_constraintStart_toEndOf="@+id/nextBtn" />
 
     <TextView
@@ -59,6 +59,6 @@
         android:layout_marginBottom="39dp"
         android:text="Receiver Info"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/senderNameEdt"
-        app:layout_constraintStart_toStartOf="@+id/senderNameEdt" />
+        app:layout_constraintBottom_toTopOf="@+id/recieverNameEdt"
+        app:layout_constraintStart_toStartOf="@+id/recieverNameEdt" />
 </androidx.constraintlayout.widget.ConstraintLayout>

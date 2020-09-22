@@ -37,13 +37,11 @@ class SpecifySenderInfoFragment : Fragment() {
 
                 val action = SpecifySenderInfoFragmentDirections
                     .actionSpecifySenderInfoFragmentToSpecifyReceiverInfoFragment(transaction)
-
-                Navigation.findNavController(rootView)
-                    .navigate(action)
+                Navigation.findNavController(rootView).navigate(action)
             }
 
             cancelBtn.setOnClickListener {
-
+                activity?.onBackPressed()
             }
         }
 

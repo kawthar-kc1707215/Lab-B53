@@ -97,7 +97,7 @@
         app:layout_constraintGuide_begin="182dp" />
 
     <TextView
-        android:id="@+id/SenderAccountNoTv"
+        android:id="@+id/senderAccountNoTv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Sender Account No"
@@ -133,7 +133,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
     <TextView
-        android:id="@+id/receiverName"
+        android:id="@+id/receiverNameTv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Receiver Name"
