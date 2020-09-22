@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_specifyReceiverInfoFragment_to_confirmationFragment"
             app:destination="@id/confirmationFragment" />
+        <argument
+            android:name="transaction"
+            app:argType="cmps312.lab.bankingapp.model.Transaction" />
     </fragment>
     <fragment
         android:id="@+id/specifySenderInfoFragment"
