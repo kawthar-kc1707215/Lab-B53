@@ -35,7 +35,7 @@ class SpecifyReceiverInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_specify_receiver_info, container, false)
+        return inflater.inflate(R.layout.fragment_specify_receiver_information, container, false)
     }
 
     companion object {
