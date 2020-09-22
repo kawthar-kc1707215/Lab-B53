@@ -26,9 +26,10 @@ class ConfirmationFragment : Fragment() {
         val transaction = args.transaction
 
         rootview.apply {
-            senderNameTv.text = transaction.senderName
+            senderNameTv.text = transaction.receiverName
             senderAccountNoTv.text = transaction.senderAccountNo
             amountTv.text = transaction.amount.toString()
+
             receiverNameTv.text = transaction.receiverName
             receiverAccountNoTv.text = transaction.receiverAccountNo
 

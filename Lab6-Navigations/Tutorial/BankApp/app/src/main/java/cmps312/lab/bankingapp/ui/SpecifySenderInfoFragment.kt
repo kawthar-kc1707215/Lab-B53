@@ -26,11 +26,12 @@ class SpecifySenderInfoFragment : Fragment() {
 
         val rootView =  inflater.inflate(R.layout.fragment_specify_sender_info, container, false)
 
+        //we should only create new object here
+        val transaction = Transaction()
 
         rootView.apply {
-
             nextBtn.setOnClickListener {
-                val transaction = Transaction()
+
                 transaction.senderName  = senderNameEdt.text.toString()
                 transaction.senderAccountNo = senderAccountNoEdt.text.toString()
                 transaction.amount = amountEdt.text.toString().toDouble()

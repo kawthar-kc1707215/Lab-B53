@@ -8,13 +8,8 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import cmps312.lab.bankingapp.R
-import cmps312.lab.bankingapp.model.Transaction
-import kotlinx.android.synthetic.main.fragment_specify_receiver_information.view.*
-import kotlinx.android.synthetic.main.fragment_specify_sender_info.view.*
-import kotlinx.android.synthetic.main.fragment_specify_sender_info.view.cancelBtn
-import kotlinx.android.synthetic.main.fragment_specify_sender_info.view.nextBtn
-import kotlinx.android.synthetic.main.fragment_specify_sender_info.view.senderAccountNoEdt
-import kotlinx.android.synthetic.main.fragment_specify_sender_info.view.senderNameEdt
+import kotlinx.android.synthetic.main.fragment_specify_receiver_info.view.*
+
 
 class SpecifyReceiverInfoFragment : Fragment() {
 
@@ -24,7 +19,7 @@ class SpecifyReceiverInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val rootView =  inflater.inflate(R.layout.fragment_specify_receiver_information, container, false)
+        val rootView =  inflater.inflate(R.layout.fragment_specify_receiver_info, container, false)
 
         val transaction = args.transaction
 
