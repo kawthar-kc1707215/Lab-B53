@@ -17,5 +17,4 @@ class CheckBalanceFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_check_balance, container, false)
     }
 
-
 }

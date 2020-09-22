@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.fragment_specify_receiver_info.view.*
 class SpecifyReceiverInfoFragment : Fragment() {
 
     private val args : SpecifyReceiverInfoFragmentArgs by navArgs()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,13 +26,12 @@ class SpecifyReceiverInfoFragment : Fragment() {
 
         rootView.apply {
 
-            transaction.receiverName  = recieverNameEdt.text.toString()
-            transaction.receiverAccountNo = recieverAccountNoEdt.text.toString()
-
             val action = SpecifyReceiverInfoFragmentDirections
                 .actionSpecifyReceiverInfoFragmentToConfirmationFragment(transaction)
 
             nextBtn.setOnClickListener {
+                transaction.receiverName  = recieverNameEdt.text.toString()
+                transaction.receiverAccountNo = recieverAccountNoEdt.text.toString()
                 Navigation.findNavController(rootView).navigate(action)
             }
 

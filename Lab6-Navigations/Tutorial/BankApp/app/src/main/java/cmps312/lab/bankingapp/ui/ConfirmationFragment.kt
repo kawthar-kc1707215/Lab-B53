@@ -1,7 +1,6 @@
 package cmps312.lab.bankingapp.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import cmps312.lab.bankingapp.R
 import kotlinx.android.synthetic.main.fragment_confirmation.view.*
-import kotlinx.android.synthetic.main.fragment_specify_sender_info.view.*
 
 
 class ConfirmationFragment : Fragment() {
@@ -26,7 +24,7 @@ class ConfirmationFragment : Fragment() {
         val transaction = args.transaction
 
         rootview.apply {
-            senderNameTv.text = transaction.receiverName
+            senderNameTv.text = transaction.senderName
             senderAccountNoTv.text = transaction.senderAccountNo
             amountTv.text = transaction.amount.toString()
 
