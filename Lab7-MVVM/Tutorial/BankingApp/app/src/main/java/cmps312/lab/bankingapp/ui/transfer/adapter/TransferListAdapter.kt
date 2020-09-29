@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import cmps312.lab.bankingapp.R
 import cmps312.lab.bankingapp.model.Transfer
+import kotlinx.android.synthetic.main.list_item_transfer.view.*
 
 class TransferListAdapter(private val context: Context, private val listener: (Transfer) -> Unit) :
     RecyclerView.Adapter<TransferListAdapter.TransactionViewHolder>() {
@@ -18,7 +19,11 @@ class TransferListAdapter(private val context: Context, private val listener: (T
     inner class TransactionViewHolder(val itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         fun bind(transfer: Transfer) {
-            //todo binding
+           itemView.apply {
+               beneficiaryNameTv.text = transfer.beneficiaryName
+               accountNoTv.text = transfer.beneficiaryAccountNo
+               amountTv.text = transfer.amount.toString()
+           }
         }
     }
 
