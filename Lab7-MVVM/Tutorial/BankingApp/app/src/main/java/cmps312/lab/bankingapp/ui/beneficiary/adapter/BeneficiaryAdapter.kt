@@ -4,8 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import cmps312.lab.bankingapp.R
+import cmps312.lab.bankingapp.databinding.ListItemBeneficiaryBinding
 import cmps312.lab.bankingapp.model.Beneficiary
 
 class BeneficiaryAdapter(
@@ -18,18 +20,25 @@ class BeneficiaryAdapter(
     init {
         beneficiaries = listOf<Beneficiary>()
     }
-    inner class TransactionViewHolder(val itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
+    inner class TransactionViewHolder(val binding: ListItemBeneficiaryBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(beneficiary: Beneficiary) {
-            //todo write the binding
+           binding.beneficiary = beneficiary
+            val view: View =  binding.root
+            view.setOnClickListener {
+                listener(beneficiary)
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionViewHolder {
-        //todo convert to binding
-        val view = LayoutInflater.from(context).inflate(R.layout.list_item_beneficiary, parent, false)
-        return TransactionViewHolder(view)
+
+        val binding: ListItemBeneficiaryBinding = DataBindingUtil.inflate(
+            LayoutInflater.from(context),
+            R.layout.list_item_beneficiary, parent, false
+        )
+        return TransactionViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: TransactionViewHolder, position: Int) {

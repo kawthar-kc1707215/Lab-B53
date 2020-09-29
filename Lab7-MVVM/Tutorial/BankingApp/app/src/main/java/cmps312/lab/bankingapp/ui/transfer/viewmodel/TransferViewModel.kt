@@ -9,6 +9,8 @@ import cmps312.lab.bankingapp.reposiotry.BankRepository
 
 class TransferViewModel(application: Application) : AndroidViewModel(application) {
     private var _transfers = MutableLiveData<MutableList<Transfer>>()
+    lateinit var transfer : Transfer
+
     fun transfers(): LiveData<MutableList<Transfer>> = _transfers
 
     //initialization
@@ -18,5 +20,4 @@ class TransferViewModel(application: Application) : AndroidViewModel(application
         //anyone who is observing
     }
 
-    //downloading
 }
