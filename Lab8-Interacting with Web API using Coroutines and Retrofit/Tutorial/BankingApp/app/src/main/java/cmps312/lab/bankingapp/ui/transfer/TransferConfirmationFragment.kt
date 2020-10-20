@@ -17,6 +17,7 @@ class TransferConfirmationFragment : Fragment(R.layout.fragment_transfer_confirm
 
         // Obtain an instance of the view binding class.
         val viewBinding = FragmentTransferConfirmationBinding.bind(view)
+
         // Obtain an instance of the ViewModel
         val transferViewModel  by activityViewModels<TransferViewModel>()
 

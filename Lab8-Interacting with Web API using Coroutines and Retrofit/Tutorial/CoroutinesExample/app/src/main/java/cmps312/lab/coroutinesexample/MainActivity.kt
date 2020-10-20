@@ -9,29 +9,21 @@ import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var job: Job
     val TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //you have created a small worker that is not on the main thread
-        startBtn.setOnClickListener {
-            job = lifecycleScope.launch {
-                val task1 = async { jump() }  //download all students
-                val task2 = async { playDead() }  //to find the qatari student
-                val task3 = async { run() } //  the student with highest gpa
 
-                Log.d(TAG, "completed jumping ${task1.await()}")
-                Log.d(TAG, "completed playDead ${task2.await()}")
-                Log.d(TAG, "completed runnning ${task3.await()}")
+          CoroutineScope(Dispatchers.Default).launch {
+                    repeat(10000) {
+                        val imgeId = resources.getIdentifier("jump${it % 12 + 1}", "drawable", packageName)
+                        jumpImg.setImageResource(imgeId)
+                        Log.d(TAG, "jump: ")
+                    }
 
-            }
-        }
-
-        stopBtn.setOnClickListener {
-            job.cancel()
-        }
+          }
     }
 
     override fun onPause() {
@@ -39,14 +31,23 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
     }
 
+    suspend fun jump3() {
+        repeat(10000) {
+            val imgeId = resources.getIdentifier("jump${it % 12 + 1}", "drawable", packageName)
+            jumpImg.setImageResource(imgeId)
+            Log.d(TAG, "jump: ")
+        }
+    }
+
     //they can change context
-    suspend fun jump() = withContext(Dispatchers.IO) {
+    suspend fun jump()= withContext(Dispatchers.Default) {
         repeat(1000) {
             val imgeId = resources.getIdentifier("jump${it % 12 + 1}", "drawable", packageName)
-            withContext(Dispatchers.Main) {
-                jumpImg.setImageResource(imgeId)
-            }
+
+            jumpImg.setImageResource(imgeId)
+
             Log.d(TAG, "jump: ")
+
         }
     }
 
@@ -62,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    suspend fun playDead() = withContext(Dispatchers.Default) {
+    suspend fun playDead() = withContext(Dispatchers.IO) {
         repeat(1000) {
             val imgeId = resources.getIdentifier("dead${it % 8 + 1}", "drawable", packageName)
             //UI update
