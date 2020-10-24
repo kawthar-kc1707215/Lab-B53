@@ -1,8 +1,7 @@
-package cmps312.lab.beneficiaryreview.ui
+package cmps312.lab.beneficiaryreview
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import cmps312.lab.beneficiaryreview.R
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,60 +1,35 @@
 package cmps312.lab.beneficiaryreview.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import cmps312.lab.beneficiaryreview.R
+import cmps312.lab.beneficiaryreview.model.Beneficiary
+import cmps312.lab.beneficiaryreview.ui.viewmodel.BeneficiaryViewModel
+import kotlinx.android.synthetic.main.fragment_add_beneficiary.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [AddBeneficiaryFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class AddBeneficiaryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class AddBeneficiaryFragment : Fragment(R.layout.fragment_add_beneficiary) {
+    val beneficiaryViewModel : BeneficiaryViewModel by activityViewModels()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+        addBtn.setOnClickListener {
+            //read all the data from the inputs
+            //create beneficiary object
+            //send this object to my viewmodel
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_beneficiary, container, false)
-    }
+            val beneficiary = Beneficiary()
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AddBeneficiaryFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AddBeneficiaryFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+            beneficiary.apply {
+                name = nameEdt.text.toString()
+                accountNo = accountNoEdt.text.toString()
+                cid = cidEdt.text.toString().toInt()
             }
+
+            beneficiaryViewModel.addBeneficiary(beneficiary)
+            activity?.onBackPressed()
+        }
     }
 }
