@@ -15,14 +15,12 @@ import kotlinx.android.synthetic.main.fragment_beneficiary_list.*
 
 
 class BeneficiaryListFragment : Fragment(R.layout.fragment_beneficiary_list) {
-<<<<<<< HEAD
 
     override fun onCreateView( view: View, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_beneficiary_list, container, false)
     }
     }
-=======
     //shared view model
     val beneficiariesViewModel : BeneficiaryViewModel by activityViewModels()
 
@@ -46,5 +44,4 @@ class BeneficiaryListFragment : Fragment(R.layout.fragment_beneficiary_list) {
     fun deleteBeneficiaryListener(beneficiary: Beneficiary){
         beneficiariesViewModel.deleteBeneficiary(beneficiary)
     }
-}
->>>>>>> c6000c5040986454c9cdcd32297125e238ab1668
+
